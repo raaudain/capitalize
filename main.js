@@ -2,8 +2,9 @@
 // The function should capitalize the first letter of each word in the string then return the capitalized string.
 
 
-// Solution #1
 function capitalize(str){
+
+  // Solution #1
   const words = [];
 
   for (let word of str.split(" ")){
@@ -11,6 +12,21 @@ function capitalize(str){
   }
 
   return words.join(" ");
+
+
+  // Solution #2
+  let result = str[0].toUpperCase();
+
+  for (let i = 1; i < str.length; i++){
+    if (str[i - 1] === " "){
+      result += str[i].toUpperCase();
+    }
+    else {
+      result += str[i];
+    }
+  }
+
+  return result
 }
 
 
